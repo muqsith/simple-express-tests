@@ -1,0 +1,22 @@
+{
+  "name": "simple-express-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "config": "^1.28.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "fs-extra": "^5.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "mongodb": "^3.0.0-rc0",
+    "multer": "^1.3.0"
+  }
+}
