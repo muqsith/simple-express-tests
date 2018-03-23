@@ -5,7 +5,8 @@ const path = require('path'),
     PORT = 8224
     ;
 
-const dummyHtmlRouter = require('./dummy-html-middleware');
+const dummyHtmlRouter = require('./dummy-html-middleware'),
+    chromeImageGenerationRouter = require('./chrome-generator-middleware');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -14,6 +15,9 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/html', dummyHtmlRouter);
+
+app.use('/generate-image', chromeImageGenerationRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Listening at http://localhost:${PORT}`);
