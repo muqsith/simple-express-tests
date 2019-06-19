@@ -1,9 +1,11 @@
-const path = require('path'),
-    express = require('express'),
-    app = express(),
-    bodyParser = require('body-parser'),
-    PORT = 8224
-    ;
+const path = require('path');
+
+const upload = require('./lib/upload');
+
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const PORT = 8224;
 
 const dummyHtmlRouter = require('./dummy-html-middleware'),
     chromeImageGenerationRouter = require('./chrome-generator-middleware');
@@ -17,6 +19,8 @@ app.get('/api', (req, res) => {
 app.use('/html', dummyHtmlRouter);
 
 app.use('/generate-image', chromeImageGenerationRouter);
+
+app.use('/upload', upload);
 
 
 app.listen(PORT, () => {
